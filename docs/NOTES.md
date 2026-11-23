@@ -25,3 +25,14 @@ cmake --build build-release -j
 
 - A one-liner for the edit, build and test loop:
 cmake --build build -j && ctest --test-dir build --output-on-failure
+
+# Notes for running on Windows
+
+- First time 
+cmake -S . -B build -G "MinGW Makefiles" -DCP_SANITIZERS=OFF
+
+- After every change
+cmake --build build
+
+- Run every test file in a folder
+.\build\bin\tests\test_0.exe
